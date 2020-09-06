@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <!--<link rel="stylesheet" href="lib/style.css">-->
+  <!--<script src="lib/script.js"></script>-->
+
+  <script>
+    'use strict'
+    function makeUser(name,age,idNumber) {
+      let id = Symbol('id');
+      
+      return {
+        [id]:idNumber,
+        name,
+        age,
+      }
+    }
+
+    let user = makeUser("Vasya",10,1);
+    let admin = makeUser("Petya",20,2);
+
+    console.log(user);
+
+    let twoObject = user + admin;
+    console.log(twoObject); //string - "[object Object][object Object]"
+
+    twoObject = user - admin;
+    console.log(twoObject); //NaN
+
+    twoObject = user / admin;
+    console.log(twoObject); //NaN
+
+    twoObject = user * admin;
+    console.log(twoObject); //NaN
+
+    twoObject = user % admin;
+    console.log(twoObject); //NaN
+
+    for(let key in user){
+      alert(user[key]);
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Учим JavaScript!</h1>
+</body>
+
+</html>

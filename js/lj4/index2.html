@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="lib/style.css">
+  <!--<script src="lib/script.js"></script>-->
+
+  <script>
+    function showPrime(n) {
+      for (let i = 2; i < n; i++) {
+        if (!isPrime(i)) continue;
+        //console.log(i);
+      }
+    }
+    function isPrime(n) {
+      for (let j = 2; j < n; j++) {
+        if (n % j == 0) return false;
+      }
+      return true;
+    }
+
+    showPrime(10);
+    
+    function pow(a, b) {
+      let result = a;
+
+      for (let i = 1; i < b; i++) {
+        result *= a;
+      }
+
+      return result;
+    }
+    
+    let value = +prompt('Введите число, которое нужно возвести в степень', '');
+    let degree = +prompt('Введите степень, в которую возвести число', '');
+    console.log(pow(value, degree));
+  </script>
+</head>
+
+<body>
+  <h1>Учим JavaScript!</h1>
+</body>
+
+</html>

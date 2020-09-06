@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <!--<link rel="stylesheet" href="lib/style.css">-->
+  <!--<script src="lib/script.js"></script>-->
+
+  <script>
+
+  function checkNumber(){
+    let userNumber    = +prompt('Какое число загадал компьютер? (от 1 до 10)','');
+    let randomNumber  = getRandomNumber();
+
+    (userNumber == randomNumber) ? 
+      alert('Вы угадали!') : 
+      alert(`Не угадали. Ваше число ${userNumber}, компьютер загадал ${randomNumber}`);
+  }
+
+  function getRandomNumber(){
+    let randomNumber = Math.ceil(Math.random()*10);
+    return randomNumber;
+  }
+
+  checkNumber();
+  </script>
+</head>
+
+<body>
+  <h1>Учим JavaScript!</h1>
+</body>
+
+</html>

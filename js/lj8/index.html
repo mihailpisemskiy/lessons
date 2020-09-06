@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <!--<link rel="stylesheet" href="lib/style.css">-->
+  <!--<script src="lib/script.js"></script>-->
+
+  <script>
+    function makeUser(username, birthday) {
+      return {
+        username,
+        birthday,
+      }
+    }
+
+    let user = makeUser("test1", "16.07.1990");
+    user.username = undefined;
+    console.log(user);
+    alert ("username" in user); //true. проверка существует ли свойство в объекте
+    for(key in user){
+      console.log(key+': '+user[key]);
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Учим JavaScript!</h1>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <!--<link rel="stylesheet" href="lib/style.css">-->
+  <!--<script src="lib/script.js"></script>-->
+
+  <script>
+    /*
+    Создайте пустой объект user.
+    Добавьте свойство name со значением John.
+    Добавьте свойство surname со значением Smith.
+    Измените значение свойства name на Pete.
+    Удалите свойство name из объекта.
+    */
+    let user = {};
+    user.name = "John";
+    user.surname = "Smith";
+    user.name = "Pete";
+    delete user.name;
+
+    /*
+    Напишите функцию isEmpty(obj), которая возвращает true, если у объекта нет свойств, иначе false.
+    */
+    function isEmpty(object) {
+      for (key in object) {
+        return false;
+      }
+      return true;
+    }
+
+    let schedule = {};
+    alert(isEmpty(schedule)); // true
+
+    schedule["8:30"] = "get up";
+    alert(isEmpty(schedule)); // false
+
+    /*
+    У нас есть объект, в котором хранятся зарплаты нашей команды:
+
+    let salaries = {
+      John: 100,
+      Ann: 160,
+      Pete: 130
+    }
+    Напишите код для суммирования всех зарплат и сохраните результат в переменной sum. Должно получиться 390.
+    */
+
+    let sum = 0;
+    let salaries = {
+      John: 100,
+      Ann: 160,
+      Pete: 130
+    }
+
+    function sumProperties(object) {
+      for (key in object) {
+        sum += object[key];
+      }
+
+      return sum;
+    }
+
+    console.log(sumProperties(salaries));
+
+    /*Создайте функцию multiplyNumeric(obj), которая умножает все числовые свойства объекта obj на 2.*/
+    function multiplyNumeric(object) {
+      for (key in object) {
+        if (typeof (object[key]) == "number") {
+          object[key] *= 2;
+        }
+      }
+
+      return object;
+    }
+
+    let menu = {
+      width: 200,
+      height: 300,
+      title: "My menu"
+    };
+
+    menu = multiplyNumeric(menu);
+    console.log(menu);
+
+    /*
+    Найти объект по идентификатору в массиве
+    myArray = [{'id':'73','foo':'bar'},{'id':'45','foo':'bar'}, */
+    myArray = [{'id':'73','foo':'bar'},{'id':'45','foo':'bar'}];
+    
+    let searchResult = myArray.find(x => x.id === '45');
+
+    console.log(searchResult);
+
+  </script>
+</head>
+
+<body>
+  <h1>Учим JavaScript!</h1>
+</body>
+
+</html>

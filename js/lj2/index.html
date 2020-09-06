@@ -1,0 +1,25 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="lib/style.css">
+  <!--<script src="lib/script.js"></script>-->
+
+  <script>
+  let n = 10;
+  nextIteration:
+  for (let i=2; i<n; i++){
+    for (let j=2; j<i; j++){
+      if (i%j==0) continue nextIteration;
+    }
+    console.log(i);
+  }
+  </script>
+</head>
+
+<body>
+  <h1>Учим JavaScript!</h1>
+</body>
+
+</html>

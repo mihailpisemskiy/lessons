@@ -1,0 +1,27 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="lib/style.css">
+  <!--<script src="lib/script.js"></script>-->
+
+  <script>
+    function ask(question, yes, no) {
+      if (confirm(question)) yes()
+      else no();
+    }
+
+    ask(
+      "Вы согласны?",
+      function () { alert("Вы согласились."); },
+      function () { alert("Вы отменили выполнение."); }
+    );
+  </script>
+</head>
+
+<body>
+  <h1>Учим JavaScript!</h1>
+</body>
+
+</html>

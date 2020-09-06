@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="lib/style.css">
+  <!--<script src="lib/script.js"></script>-->
+
+  <script>
+    let login; //логин пользователя
+    let password; //пароль пользователя
+    const errorMessage = '';
+    
+    login = prompt('Введите ваш логин','');
+    if (login=='Админ'){
+      password = prompt('Введите пароль','');
+      if (password=='Я главный'){
+        alert('Здравствуйте!');
+      }else if(password==undefined || password=='' || password == null) {
+        alert('Отменено');
+      }else{
+        alert('Неверный пароль');
+      }
+    }else if(login==undefined || login=='' || login == null){
+      alert('Отменено.');
+    }else{
+      alert('Я вас не знаю.');
+    }
+
+
+  </script>
+</head>
+
+<body>
+  <h1>Учим JavaScript!</h1>
+</body>
+
+</html>
