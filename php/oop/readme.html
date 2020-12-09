@@ -1,0 +1,382 @@
+<meta charset="utf-8">
+
+<main role="main">
+    <div class="nav-block">
+        <p>
+            Перед решением задач изучите <a
+                href="/books/php/oop/osnovy-raboty-s-objektno-orientirovannym-programmirovaniem-v-php-1.html">теорию</a>
+            к данному уроку.
+        </p>
+    </div>
+    <h2 class="block">Задачи для решения</h2>
+
+    <h3>Работа с классами и объектами</h3>
+    <div>
+        <p>
+            <span class="-task-"></span>
+            Сделайте класс <b>Worker</b>,
+            в котором будут следующие <b>public</b> поля - name (имя),
+            age (возраст), salary (зарплата).
+        </p>
+        <p>
+            Создайте объект этого класса, <b>затем</b> установите поля
+            в следующие значения (не в __construct, а для созданного объекта) - имя 'Иван', возраст 25, зарплата 1000.
+            Создайте второй объект этого класса, установите поля
+            в следующие значения - имя 'Вася', возраст 26, зарплата 2000.
+        </p>
+        <p>
+            Выведите на экран сумму зарплат Ивана и Васи.
+            Выведите на экран сумму возрастов Ивана и Васи.
+        </p>
+    </div>
+    <div>
+        <p>
+            <span class="-task-"></span>
+            Сделайте класс <b>Worker</b>,
+            в котором будут следующие <b>private</b> поля - name (имя), age (возраст), salary (зарплата)
+            и следующие <b>public</b>
+            методы setName, getName, setAge, getAge, setSalary, getSalary.
+        </p>
+        <p>
+            Создайте 2 объекта этого класса:
+            'Иван', возраст 25, зарплата 1000 и 'Вася', возраст 26, зарплата 2000.
+        </p>
+        <p>
+            Выведите на экран сумму зарплат Ивана и Васи.
+            Выведите на экран сумму возрастов Ивана и Васи.
+        </p>
+    </div>
+    <div>
+        <p>
+            <span class="-task-"></span>
+            Дополните класс <b>Worker</b> из предыдущей задачи <b>private</b> методом
+            checkAge, который будет проверять возраст на корректность (от 1 до 100 лет).
+            Этот метод должен использовать метод setAge перед установкой нового возраста
+            (если возраст не корректный - он не должен меняться).
+        </p>
+    </div>
+
+    <h3>На __construct</h3>
+    <div>
+        <p>
+            <span class="-task-"></span>
+            Сделайте класс <b>Worker</b>,
+            в котором будут следующие <b>private</b> поля - name (имя), salary (зарплата).
+            Сделайте так, чтобы эти свойства заполнялись в методе __construct
+            при создании объекта (вот так: new Worker(имя, возраст) ).
+            Сделайте также <b>public</b> методы getName, getSalary.
+        </p>
+        <p>
+            Создайте объект этого класса 'Дима', возраст 25, зарплата 1000.
+            Выведите на экран произведение его возраста и зарплаты.
+        </p>
+    </div>
+
+    <h3>Наследование</h3>
+    <div>
+        <p>
+            <span class="-task-"></span>
+            Сделайте класс <b>User</b>,
+            в котором будут следующие <b>protected</b> поля - name (имя),
+            age (возраст), <b>public</b> методы setName, getName, setAge, getAge.
+        </p>
+        <p>
+            Сделайте класс <b>Worker</b>, который наследует
+            от класса User и вносит дополнительное <b>private</b> поле salary (зарплата),
+            а также методы <b>public</b> getSalary и setSalary.
+        </p>
+        <p>
+            Создайте объект этого класса 'Иван', возраст 25, зарплата 1000.
+            Создайте второй объект этого класса 'Вася', возраст 26, зарплата 2000.
+            Найдите сумму зарплата Ивана и Васи.
+        </p>
+        <p>
+            Сделайте класс <b>Student</b>, который наследует
+            от класса User и вносит дополнительные <b>private</b> поля
+            стипендия, курс, а также геттеры и сеттеры для них.
+        </p>
+    </div>
+    <div>
+        <p>
+            <span class="-task-"></span>
+            Сделайте класс <b>Driver</b> (Водитель), который будет наследоваться от класса Worker
+            из предыдущей задачи. Этот метод должен вносить следующие private поля:
+            водительский стаж, категория вождения (A, B, C).
+        </p>
+    </div>
+
+    <h3>Практика</h3>
+    <div>
+        <p>
+            <span class="-task-"></span>
+            Создайте класс <b>Form</b> - оболочку
+            для создания форм.
+            Он должен иметь методы input, submit,
+            password, textarea, open, close. Каждый метод принимает массив атрибутов.
+        </p>
+        <p>
+            Примеры использования:
+        </p>
+        <div class="example-block">
+		<pre class="line-numbers language-php"><code class=" language-php"><span class="token php"><span
+                class="token delimiter">&lt;?php</span>
+	<span class="token keyword keyword-echo">echo</span> <span class="token variable">$form</span><span
+                    class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">input</span><span
+                    class="token punctuation">(</span><span class="token punctuation">[</span><span
+                    class="token string">'type'</span><span class="token operator">=</span><span class="token operator">&gt;</span><span
+                    class="token string">'text'</span><span class="token punctuation">,</span> <span
+                    class="token string">'value'</span><span class="token operator">=</span><span
+                    class="token operator">&gt;</span><span class="token string">'!!!'</span><span
+                    class="token punctuation">]</span><span class="token punctuation">)</span><span
+                    class="token punctuation">;</span>
+	<span class="token comment" spellcheck="true">//Код выше выведет &lt;input type="text" value="!!!"&gt;</span>
+
+	<span class="token keyword keyword-echo">echo</span> <span class="token variable">$form</span><span
+                    class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">password</span><span
+                    class="token punctuation">(</span><span class="token punctuation">[</span><span
+                    class="token string">'value'</span><span class="token operator">=</span><span
+                    class="token operator">&gt;</span><span class="token string">'!!!'</span><span
+                    class="token punctuation">]</span><span class="token punctuation">)</span><span
+                    class="token punctuation">;</span>
+	<span class="token comment" spellcheck="true">//Код выше выведет &lt;input type="password" value="!!!"&gt;</span>
+
+	<span class="token keyword keyword-echo">echo</span> <span class="token variable">$form</span><span
+                    class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">submit</span><span
+                    class="token punctuation">(</span><span class="token punctuation">[</span><span
+                    class="token string">'value'</span><span class="token operator">=</span><span
+                    class="token operator">&gt;</span><span class="token string">'go'</span><span
+                    class="token punctuation">]</span><span class="token punctuation">)</span><span
+                    class="token punctuation">;</span>
+	<span class="token comment" spellcheck="true">//Код выше выведет &lt;input type="submit" value="go"&gt;</span>
+
+	<span class="token keyword keyword-echo">echo</span> <span class="token variable">$form</span><span
+                    class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">textarea</span><span
+                    class="token punctuation">(</span><span class="token punctuation">[</span><span
+                    class="token string">'placeholder'</span><span class="token operator">=</span><span
+                    class="token operator">&gt;</span><span class="token string">'123'</span><span
+                    class="token punctuation">,</span> <span class="token string">'value'</span><span
+                    class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">'!!!'</span><span
+                    class="token punctuation">]</span><span class="token punctuation">)</span><span
+                    class="token punctuation">;</span>
+	<span class="token comment" spellcheck="true">//Код выше выведет &lt;textarea placeholder="123"&gt;!!!&lt;/textarea&gt;</span>
+
+	<span class="token keyword keyword-echo">echo</span> <span class="token variable">$form</span><span
+                    class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">open</span><span
+                    class="token punctuation">(</span><span class="token punctuation">[</span><span
+                    class="token string">'action'</span><span class="token operator">=</span><span
+                    class="token operator">&gt;</span><span class="token string">'index.php'</span><span
+                    class="token punctuation">,</span> <span class="token string">'method'</span><span
+                    class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">'POST'</span><span
+                    class="token punctuation">]</span><span class="token punctuation">)</span><span
+                    class="token punctuation">;</span>
+	<span class="token comment"
+          spellcheck="true">//Код выше выведет &lt;form action="index.php" method="POST"&gt;</span>
+
+	<span class="token keyword keyword-echo">echo</span> <span class="token variable">$form</span><span
+                    class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">close</span><span
+                    class="token punctuation">(</span><span class="token punctuation">)</span><span
+                    class="token punctuation">;</span>
+	<span class="token comment" spellcheck="true">//Код выше выведет &lt;/form&gt;</span>
+<span class="token delimiter">?&gt;</span></span><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        </div>
+        <p>
+            Передаваемые атрибуты могут быть любыми:
+        </p>
+        <div class="example-block">
+		<pre class="line-numbers language-php"><code class=" language-php"><span class="token php"><span
+                class="token delimiter">&lt;?php</span>
+	<span class="token keyword keyword-echo">echo</span> <span class="token variable">$form</span><span
+                    class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">input</span><span
+                    class="token punctuation">(</span><span class="token punctuation">[</span><span
+                    class="token string">'type'</span><span class="token operator">=</span><span class="token operator">&gt;</span><span
+                    class="token string">'text'</span><span class="token punctuation">,</span> <span
+                    class="token string">'value'</span><span class="token operator">=</span><span
+                    class="token operator">&gt;</span><span class="token string">'!!!'</span><span
+                    class="token punctuation">,</span> <span class="token string">'class'</span><span
+                    class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">'ggg'</span><span
+                    class="token punctuation">]</span><span class="token punctuation">)</span><span
+                    class="token punctuation">;</span>
+	<span class="token comment"
+          spellcheck="true">//Код выше выведет &lt;input type="text" value="!!!" class="ggg"&gt;</span>
+<span class="token delimiter">?&gt;</span></span><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        </div>
+        <p>
+            Для решения задачи сделайте <b>private</b> метод, который
+            параметром будет принимать массив, например, <i>['type'=&gt;'text', 'value'=&gt;'!!!']</i>
+            и делать из него строку с атрибутами, в нашем случае <i>type="text" value="!!!"</i>.
+        </p>
+        <p>
+            Пример создания формы с помощью нашего класса:
+        </p>
+        <div class="example-block">
+		<pre class="line-numbers language-php"><code class=" language-php"><span class="token php"><span
+                class="token delimiter">&lt;?php</span>
+	<span class="token keyword keyword-echo">echo</span> <span class="token variable">$form</span><span
+                    class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">open</span><span
+                    class="token punctuation">(</span><span class="token punctuation">[</span><span
+                    class="token string">'action'</span><span class="token operator">=</span><span
+                    class="token operator">&gt;</span><span class="token string">'index.php'</span><span
+                    class="token punctuation">,</span> <span class="token string">'method'</span><span
+                    class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">'POST'</span><span
+                    class="token punctuation">]</span><span class="token punctuation">)</span><span
+                    class="token punctuation">;</span>
+	<span class="token keyword keyword-echo">echo</span> <span class="token variable">$form</span><span
+                    class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">input</span><span
+                    class="token punctuation">(</span><span class="token punctuation">[</span><span
+                    class="token string">'type'</span><span class="token operator">=</span><span class="token operator">&gt;</span><span
+                    class="token string">'text'</span><span class="token punctuation">,</span> <span
+                    class="token string">'placeholder'</span><span class="token operator">=</span><span
+                    class="token operator">&gt;</span><span class="token string">'Ваше имя'</span><span
+                    class="token punctuation">,</span> <span class="token string">'name'</span><span
+                    class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">'name'</span><span
+                    class="token punctuation">]</span><span class="token punctuation">)</span><span
+                    class="token punctuation">;</span>
+	<span class="token keyword keyword-echo">echo</span> <span class="token variable">$form</span><span
+                    class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">password</span><span
+                    class="token punctuation">(</span><span class="token punctuation">[</span><span
+                    class="token string">'placeholder'</span><span class="token operator">=</span><span
+                    class="token operator">&gt;</span><span class="token string">'Ваш пароль'</span><span
+                    class="token punctuation">,</span> <span class="token string">'name'</span><span
+                    class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">'pass'</span><span
+                    class="token punctuation">]</span><span class="token punctuation">)</span><span
+                    class="token punctuation">;</span>
+	<span class="token keyword keyword-echo">echo</span> <span class="token variable">$form</span><span
+                    class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">submit</span><span
+                    class="token punctuation">(</span><span class="token punctuation">[</span><span
+                    class="token string">'value'</span><span class="token operator">=</span><span
+                    class="token operator">&gt;</span><span class="token string">'Отправить'</span><span
+                    class="token punctuation">]</span><span class="token punctuation">)</span><span
+                    class="token punctuation">;</span>
+	<span class="token keyword keyword-echo">echo</span> <span class="token variable">$form</span><span
+                    class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">close</span><span
+                    class="token punctuation">(</span><span class="token punctuation">)</span><span
+                    class="token punctuation">;</span>
+<span class="token delimiter">?&gt;</span></span><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        </div>
+        <p>
+            В результате получится следующая форма:
+        </p>
+        <div class="example-block">
+		<pre class="line-numbers language-html"><code class=" language-html"><span class="token tag"><span
+                class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span
+                class="token attr-value"><span class="token punctuation">=</span><span
+                class="token punctuation">"</span>index.php<span class="token punctuation">"</span></span> <span
+                class="token attr-name">method</span><span class="token attr-value"><span
+                class="token punctuation">=</span><span class="token punctuation">"</span>POST<span
+                class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span
+            class="token attr-name">type</span><span class="token attr-value"><span
+            class="token punctuation">=</span><span class="token punctuation">"</span>text<span
+            class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span
+            class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Ваше имя<span
+            class="token punctuation">"</span></span> <span class="token attr-name">name</span><span
+            class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>name<span
+            class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span
+            class="token attr-name">type</span><span class="token attr-value"><span
+            class="token punctuation">=</span><span class="token punctuation">"</span>text<span
+            class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span
+            class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Ваш пароль<span
+            class="token punctuation">"</span></span> <span class="token attr-name">name</span><span
+            class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>pass<span
+            class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span
+        class="token punctuation">&gt;</span></span><span
+                    class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        </div>
+    </div>
+    <div>
+        <p>
+            <span class="-task-"></span>
+            Создайте класс <b>SmartForm</b>, который будет наследовать от <b>Form</b> из предыдущей задачи
+            и сохранять значения инпутов и textarea после отправки.
+        </p>
+        <p>
+            То есть если мы сделали форму, нажали на кнопку отправки -
+            то значения из инпутов не должны пропасть. Мало ли что-то пойдет
+            не так, например, форма некорректно заполнена, а введенные данные
+            из нее пропали и их следует вводить заново. Этого следует избегать.
+        </p>
+    </div>
+    <div>
+        <p>
+            <span class="-task-"></span>
+            Создайте класс <b>Cookie</b> - оболочку над работой с куками.
+            Класс должен иметь следующие методы:
+            установка куки <i>set(имя куки, ее значение)</i>,
+            получение куки <i>get(имя куки)</i>, удаление куки <i>del(имя куки)</i>.
+        </p>
+    </div>
+    <div>
+        <p>
+            <span class="-task-"></span>
+            Создайте класс <b>Session</b> - оболочку над сессиями.
+            Он должен иметь следующие методы: создать переменную сессии, получить переменную,
+            удалить переменную сессии, проверить наличие переменной сессии.
+        </p>
+        <p>
+            Сессия должна стартовать (session_start) в методе <b>__construct</b>.
+        </p>
+    </div>
+    <div>
+        <p>
+            <span class="-task-"></span>
+            Реализуйте класс <b>Flash</b>, который будет использовать внутри себя
+            класс Session из предыдущей задачи (именно использовать, а не наследовать).
+        </p>
+        <p>
+            Этот класс будет использоваться для сохранения сообщений в сессию
+            и вывода их из сессии. Зачем это нужно: такой класс
+            часто используется для форм. Например на одной странице
+            пользователь отправляет форму, мы сохраняем в сессию сообщение об успешной
+            отправке, редиректим пользователя на другую страницу и там показываем
+            сообщение из сессии.
+        </p>
+        <p>
+            Класс должен иметь да метода - <b>setMessage</b>, который сохраняет сообщение в сессию
+            и <b>getMessage</b>, который получает сообщение из сессии.
+        </p>
+    </div>
+    <div>
+        <p>
+            <span class="-task-"></span>
+            Создайте класс-оболочку <b>Db</b> над базами данных.
+            Класс должен иметь следующие методы:
+            получение данных, удаление данных, редактирование данных,
+            подсчет данных, очистка таблицы, очистка таблиц.
+        </p>
+    </div>
+    <div>
+        <p>
+            <span class="-task-"></span>
+            Создайте класс <b>Log</b> для ведения логов.
+            Этот класс должен иметь следующие методы: сохранить в лог,
+            получить последние N записей, очистить таблицу с логами.
+        </p>
+        <p>
+            Класс <b>Log</b> должен использовать класс <b>Db</b>
+            из предыдущей задачи (именно использовать, а не наследовать).
+        </p>
+    </div>
+
+    <!--
+    <div>
+        <p>
+            <span class="-task-"></span>
+            класс авторизации
+            логин, пароль
+
+            isAdmin
+            isAuth
+            getStatus
+            isGuest
+        </p>
+    </div>
+    <div>
+        <p>
+            <span class="-task-"></span>
+            класс регистрации
+            checkNotBusy
+        </p>
+    </div>
+    -->                                                        </main>
